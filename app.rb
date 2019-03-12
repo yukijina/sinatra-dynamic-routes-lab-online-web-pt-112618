@@ -37,7 +37,7 @@ class App < Sinatra::Base
       "#{@n1 - @n2}"
     elsif @operation == "multiply"
       "#{@n1 * @n2}"
-    elsif @operation == "devide"
+    elsif @operation == "divide"
      "#{@n1 / @n2}"
     end 
   end 
