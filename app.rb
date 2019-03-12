@@ -34,9 +34,9 @@ class App < Sinatra::Base
       "#{@n1 + @n2}"
     elsif @operation == "subtract"
       "#{@n1 - @n2}"
-    elsif params[:operation] == "multiply"
+    elsif @operation == "multiply"
       "#{params[:number1] * params[:number2]}"
-    elsif params[:operation] == "devide"
+    elsif @operation == "devide"
      "#{params[:number1] / params[:number2]}"
     end 
   end 
