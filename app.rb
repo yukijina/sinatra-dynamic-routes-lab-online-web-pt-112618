@@ -14,11 +14,30 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @num = params[:number].to_i
+    @num =  params[:number].to_i 
     @phrase = params[:phrase]
-
-    @num.times {|n| @phrase}
-
+    
+    result = []
+    @num.times {|n| result << @phrase}
+    "#{result.join(" ")}"
   end
+  
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    "#{params[:word1] + ' ' + params[:word2] + ' ' + params[:word3] + ' ' + params[:word4] + ' ' + params[:word5]}."
+  end
+  
+  get '/:operation/:number1/:number2' do
+    binding.pry
+    @operation = params[:opration] 
+    if params[:opration] == "add"
+      "#{params[:number1] + params[:number2]}"
+    elsif params[:opration] == "subtract"
+      "#{params[:number1] - params[:number2]}"
+    elsif params[:operation] == "multiply"
+      "#{params[:number1] * params[:number2]}"
+    elsif params[:operation] == "devide"
+     "#{params[:number1] / params[:number2]}"
+    end 
+  end 
 
 end
